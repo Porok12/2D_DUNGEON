@@ -36,7 +36,8 @@ public class Generator
             {
                 for (int y = room.yMin; y < room.yMax; y++)
                 {
-                    if (x >= 0 && x < dungeonWidth && y >= 0 && y < dungeonHeight) {
+                    if (x >= 0 && x < dungeonWidth && y >= 0 && y < dungeonHeight)
+                    {
                         dungeonGrid[x, y] = true;
                     }
                 }
@@ -50,10 +51,11 @@ public class Generator
 
         // Task 2: Implement DelaunayTriangulation and MinimumSpanningTree
         // var roomsCenters = rooms.ConvertAll(room => room.center);
-        // var delay = DelaunayTriangulation.GenerateDelaunayTriangulation(roomsCenters);
+        // var delay = DelaunayTriangulation.GenerateSimpleEdges(roomsCenters);
         // var mst = MinimumSpanningTree.GenerateMinimumSpanningTree(delay, rooms.Count);
-        // edges = mst.ConvertAll(edge => Tuple.Create(rooms[edge.Item1].center, rooms[edge.Item2].center, edge.Item3));
-
+        // edges = mst.ConvertAll(edge =>
+        //     Tuple.Create(rooms[edge.Item1].center, rooms[edge.Item2].center, edge.Item3)
+        // );
     }
 
     private void GenerateRoom()
@@ -77,7 +79,8 @@ public class Generator
         {
             for (int y = startY; y < startY + roomHeight; y++)
             {
-                if (dungeonGrid[x, y]) return false; // Kolizja z istniejącym pokojem
+                if (dungeonGrid[x, y])
+                    return false; // Kolizja z istniejącym pokojem
             }
         }
         return true;
