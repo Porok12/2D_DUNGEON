@@ -44,6 +44,11 @@ class Renderer
             }
         }
 
+        if (edges == null)
+        {
+            return;
+        }
+
         // Draw L-shaped corridors
         foreach (var edge in edges)
         {
@@ -83,14 +88,15 @@ class Renderer
                 currentY += (currentY < endInt.y) ? 1 : -1;
             }
         }
-
-
     }
 
-    public void RenderEdges(
-        List<Tuple<Vector2, Vector2, float>> edges
-    )
+    public void RenderEdges(List<Tuple<Vector2, Vector2, float>> edges)
     {
+        if (edges == null)
+        {
+            return;
+        }
+
         foreach (var edge in edges)
         {
             var start = edge.Item1;
@@ -109,7 +115,6 @@ class Renderer
             lineRenderer.SetPosition(1, new Vector3(end.x, end.y, 0));
         }
     }
-
 
     private void PlaceTile(int x, int y, Color color)
     {
@@ -144,10 +149,6 @@ class Renderer
         texture.Apply();
 
         // Create a sprite from the texture
-        return Sprite.Create(
-            texture,
-            new Rect(0, 0, width, height),
-            new Vector2(0, 0)
-        );
+        return Sprite.Create(texture, new Rect(0, 0, width, height), new Vector2(0, 0));
     }
 }
