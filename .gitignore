@@ -1,0 +1,47 @@
+# === Unity generated files ===
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.pidb.meta
+sysinfo.txt
+
+# === OS generated files ===
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# === Visual Studio Code ===
+.vscode/
+
+# === JetBrains Rider ===
+.idea/
+*.iml
+
+# === Unity asset store tools ===
+/Assets/AssetStoreTools*
+
+# === Crash Reports ===
+CrashReports/
