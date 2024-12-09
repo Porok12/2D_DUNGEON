@@ -2,7 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Generator {
+public class Generator
+{
     public int dungeonWidth = 50;
     public int dungeonHeight = 50;
     public int roomMinSize = 8;
@@ -23,9 +24,10 @@ public class Generator {
 
     public void GenerateDungeon()
     {
-        // Inicjalizacja siatki dungeon
+        // Inicjalizacja siatki
         dungeonGrid = new bool[dungeonWidth, dungeonHeight];
 
+        // Task 1: Implement BinarySpacePartitioning
         var rooms = BinarySpacePartitioning.GenerateGrid(dungeonWidth, dungeonHeight, roomMinSize);
         foreach (var room in rooms)
         {
@@ -41,16 +43,16 @@ public class Generator {
             }
         }
         // Old code
-        // int roomAttempts = 10;
-        // for (int i = 0; i < roomAttempts; i++)
+        // for (int i = 0; i < 10; i++)
         // {
         //     GenerateRoom();
         // }
 
-        var roomsCenters = rooms.ConvertAll(room => room.center);
-        var delay = DelaunayTriangulation.GenerateDelaunayTriangulation(roomsCenters);
-        var mst = MinimumSpanningTree.GenerateMinimumSpanningTree(delay, rooms.Count);
-        edges = mst.ConvertAll(edge => Tuple.Create(rooms[edge.Item1].center, rooms[edge.Item2].center, edge.Item3));
+        // Task 2: Implement DelaunayTriangulation and MinimumSpanningTree
+        // var roomsCenters = rooms.ConvertAll(room => room.center);
+        // var delay = DelaunayTriangulation.GenerateDelaunayTriangulation(roomsCenters);
+        // var mst = MinimumSpanningTree.GenerateMinimumSpanningTree(delay, rooms.Count);
+        // edges = mst.ConvertAll(edge => Tuple.Create(rooms[edge.Item1].center, rooms[edge.Item2].center, edge.Item3));
 
     }
 
